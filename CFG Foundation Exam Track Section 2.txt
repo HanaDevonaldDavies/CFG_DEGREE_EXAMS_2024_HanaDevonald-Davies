@@ -1,1 +1,26 @@
 SECTION 2 
+
+Section Evaluation:
+
+1. 'department_name = NULL' cannot work as expected because Null can't be 
+used with '='. In SQL, 'IS NULL' is used to check for NULL values.
+
+2. The 'OR' section can't be properly processed unless it grouped differently.
+E.g. (department_name = 'Cardiology' OR department_name IS NULL)
+
+3. When working with multple tables, you should specify which table a column
+belongs to by specifying each column with an 'id' or name. This makes it clear 
+which table the column is from 
+
+4. Limit 1, only lets you see one patient 
+
+
+Suggestions:
+
+1. Use EXISTS instead of '=(SELECT...)'
+
+2. Ensure indexes on admissions.department_id and admissions.admission_date
+
+3. Change =NULL to IS NULL
+
+4. Improve Limit to however many patients you need to see (I used 5 as an example)
